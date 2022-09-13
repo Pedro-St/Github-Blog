@@ -2,7 +2,39 @@ import styled from "styled-components";
 
 export const BlogDiv = styled.div`
     display: flex;
+    flex-direction: column;
 
+    .barSearch{
+        width: 100%;
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+
+        display: flex;
+        flex-direction: row;
+        margin-top: 3rem;
+
+        position: absolute;
+        width: 1065px;
+        height: 50px;
+        left: calc(50% - 1060px/2);
+        top: 585px;
+       
+        background: ${(props) => props.theme['base-input']};
+        border: 1px solid ${(props) => props.theme['base-border']};
+        border-radius: 6px;
+
+        font-family: 'Nunito';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 26px;
+
+        color: ${(props) => props.theme['base-label']};
+        &:focus{
+            border: 1px solid ${(props) => props.theme['blue']};
+        }
+    }
 `
 
 export const SeachFormContainer = styled.form`
@@ -45,40 +77,6 @@ export const SeachFormContainer = styled.form`
            color: ${(props) => props.theme['base-span']}
     }
     
-    input{
-        width: 100%;
-        max-width: 1120px;
-        margin: 0 auto;
-        padding: 0 1.5rem;
-
-        display: flex;
-        flex-direction: row;
-        margin-top: 3rem;
-
-        position: absolute;
-        width: 1065px;
-        height: 50px;
-        left: calc(50% - 1060px/2);
-        top: 585px;
-    
-
-        
-
-        background: ${(props) => props.theme['base-input']};
-        border: 1px solid ${(props) => props.theme['base-border']};
-        border-radius: 6px;
-
-        font-family: 'Nunito';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 1rem;
-        line-height: 26px;
-
-        color: ${(props) => props.theme['base-label']};
-        &:focus{
-            border: 1px solid ${(props) => props.theme['blue']};
-        }
-    }
 `
 
 export const PostContainer = styled.div`

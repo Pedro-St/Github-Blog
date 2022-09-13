@@ -4,7 +4,7 @@ import { Post } from "../../components/Issues";
 import { Profile } from "../../components/Profile";
 import { apiSearch } from "../../lib/axios";
 
-import { PostContainer, SeachFormContainer } from "./style";
+import { BlogDiv, PostContainer, SeachFormContainer } from "./style";
 
 
 export interface ProfileData {
@@ -69,7 +69,7 @@ export function Blog() {
   }
     
     return(
-        <div>
+        <BlogDiv>
            
             <Profile/>
 
@@ -79,7 +79,9 @@ export function Blog() {
               <p>{issues.length} publicações</p>
                 
             </span>
-           <input
+            </SeachFormContainer>
+
+           <input className="barSearch"
               type="text"
               placeholder="Buscar Conteúdo"
               value={searchValue}
@@ -87,13 +89,12 @@ export function Blog() {
               onChange={handleChangeValue}
              
            /> 
-        </SeachFormContainer>
 
         <PostContainer>
           {issues.length > 0 &&
             issues.map((issue) => <Post data={issue} key={issue.title} />)}
         </PostContainer>
        
-        </div>
+        </BlogDiv>
     )
 }
