@@ -1,0 +1,20 @@
+import { Routes, Route } from "react-router-dom";
+
+import { DefaultLayout } from "./Layout/DefaultLayout";
+import { Blog } from "./pages/Blog";
+
+import { PostDetail } from "./pages/PostDetail";
+
+
+
+export function Router() {
+    return(
+        <Routes>
+        <Route path="/" element={<DefaultLayout />}>
+          <Route path="/" element={<Blog />} />
+          <Route path="/post/:id" element={<PostDetail />} /> 
+         
+        </Route>
+      </Routes>
+    )
+}
